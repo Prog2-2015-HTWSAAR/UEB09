@@ -7,7 +7,7 @@
 
 #include "FileReport.h"
 #include <math.h>
-
+#include <iostream>
 const string FileReport::FILE_NAME = "Dateiname: ";
 const string FileReport::LINES = "Zeilen";
 const string FileReport::COMMENT_LINES = "Kommentarzeilen";
@@ -74,7 +74,7 @@ void FileReport::parseFile(string& fileName){
 	string line;
 	fstream file;
 	if(!fileExists(fileName)){
-		throw "File does not exist!";
+		cout << "File does not exist!";
 	}
 	file.open(constName);
 	name = fileName;
