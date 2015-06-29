@@ -29,7 +29,7 @@ void runFileReport(int argc, char *argv[]){
 		catch (char* e){
 			cout << e << endl;
 		}
-	} while (argc != durchlaufeneDateien);
+	} while (argc < durchlaufeneDateien && argc != 1);
 }
 /**
 * @brief Main Function
