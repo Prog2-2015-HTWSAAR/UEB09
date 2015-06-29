@@ -14,15 +14,21 @@ void runFileReport(int argc, char *argv[]){
 	int durchlaufeneDateien = FIRST_PARAM;
 	FileReport fileReport = FileReport();
 	do{
+		try{
 		if (argc > durchlaufeneDateien){
-			string fileName = argv[durchlaufeneDateien];
-			fileReport.parseFile(fileName);
-			cout << fileReport.toString();
-		}
+			
+				string fileName = argv[durchlaufeneDateien];
+				fileReport.parseFile(fileName);
+				cout << fileReport.toString();
+			}
 		else {
 			cout << ERROR_WRONG_PARAM;
 		}
 		durchlaufeneDateien++;
+		}
+		catch (char* e){
+			cout << e << endl;
+		}
 	} while (argc != durchlaufeneDateien);
 }
 /**
