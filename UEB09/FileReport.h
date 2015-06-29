@@ -37,13 +37,43 @@ public:
 	static const int SPECIAL_CHAR_LOWER_BORDER;
 	static const int SPECIAL_CHAR_UPPER_BORDER;
 
+	/**
+	* @brief Konstruktor
+	*/
 	FileReport();
+	/**
+	* @brief Konstruktor
+	* @param fileName Dateiname
+	*/
 	FileReport(string& fileName);
+	/**
+	* @brief Dekonstruktor
+	*/
 	virtual ~FileReport();
+	/**
+	* @brief parseFile
+	* @param fileName Filename
+	*/
 	void parseFile(string& fileName);
+	/**
+	* @brief toCSVFile
+	* @param fileName Filename
+	*/
 	void toCSVFile(string& fileName);
+	/**
+	* @brief toString
+	*/
 	string toString();
+	/**
+	* @brief fileExists
+	* @param fileName Filename
+	*/
 	bool fileExists(string fileName);
+	/**
+	* @brief round
+	* @param Zahl Zahl zum Runden
+	* @param Stellen Stelle zum runden
+	*/
 	double round(double Zahl, int Stellen);
 private:
 	string name;
@@ -60,21 +90,38 @@ private:
 	*/
 	void initReport();
 	/**
-	* @brief Konstruktor
-	* @param inhalt Der Inhalt des Listenelements
+	* @brief analyseLine
+	* @param line Zeile für analyse
 	*/
 	void analyseLine(string& line);
 	/**
-	* @brief Konstruktor
-	* @param inhalt Der Inhalt des Listenelements
-	* @param previous Das Vorangegangene Element
-	* @param next Das Nachfolgende Element
+	* @brief checkComment
+	* @param line Zeile für analyse
 	*/
 	bool checkComment(string& line);
+	/**
+	* @brief computeCommentDensity Berechet Kommentardichte
+	*/
 	void computeCommentDensity();
+	/**
+	* @brief checkUpperCase
+	* @param character character
+	*/
 	bool checkUpperCase(char character);
+	/**
+	* @brief checkLowerCase
+	* @param character character
+	*/
 	bool checkLowerCase(char character);
+	/**
+	* @brief checkDigit
+	* @param character character
+	*/
 	bool checkDigit(char character);
+	/**
+	* @brief checkSpecialCharacter
+	* @param character character
+	*/
 	bool checkSpecialCharacter(char character);
 
 };
